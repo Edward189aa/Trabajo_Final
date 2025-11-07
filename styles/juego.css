@@ -1,0 +1,44 @@
+/* Estilos específicos para el minijuego */
+.game-instructions {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--text-secondary);
+}
+
+.game-stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.game-stat {
+  text-align: center;
+}
+
+.game-stat-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.game-stat-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.game-over {
+  text-align: center;
+  margin-top: 20px;
+  color: #ff5252;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.game-success {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--secondary-color);
+  font-size: 24px;
+  font-weight: bold;
+}
