@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameUsmp - Tu tienda de videojuegos</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/carrito.css" />
+    <link rel="stylesheet" href="styles/contacto.css" />
+    <!-- AGREGADO -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <a href="index.html" class="logo"
+            ><i class="fas fa-gamepad"></i>GameUsmp</a
+          >
+          <nav>
+            <ul>
+              <li>
+                <a href="index.html" class="active"
+                  ><i class="fas fa-home"></i>Inicio</a
+                >
+              </li>
+              <li>
+                <a href="#novedades"><i class="fas fa-star"></i>Novedades</a>
+              </li>
+              <li>
+                <a href="#juegos"><i class="fas fa-dice"></i>Juegos</a>
+              </li>
+              <li>
+                <a href="juego.html"
+                  ><i class="fas fa-puzzle-piece"></i>Minijuego</a
+                >
+              </li>
+              <li>
+                <a href="contacto.html"
+                  ><i class="fas fa-envelope"></i>Contacto</a
+                >
+              </li>
+              <li>
+                <a href="ubicacion.html"
+                  ><i class="fas fa-map-marker-alt"></i>Ubicación</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div class="header-actions">
+            <button class="theme-toggle" id="themeToggle">
+              <i class="fas fa-moon"></i>
+            </button>
+            <div class="cart-container">
+              <button class="cart-icon" id="cartIcon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Carrito de compras -->
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h2 class="cart-title">Tu Carrito</h2>
+        <button class="close-cart" id="closeCart">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <!-- Los elementos del carrito se agregarán aquí dinámicamente -->
+      </div>
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button class="checkout-btn">Finalizar Compra</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+      <div class="container">
+        <h1>Bienvenido a GameUsmp</h1>
+        <p>
+          Tu tienda de videojuegos favorita con los mejores títulos y precios
+          increíbles
+        </p>
+        <a href="#juegos" class="btn">Explorar Juegos</a>
+      </div>
+    </section>
+
+    <!-- Novedades -->
+    <section class="products" id="novedades">
+      <div class="container">
+        <h2 class="section-title">Novedades</h2>
+        <div class="product-grid" id="novedades-grid">
+          <!-- Los productos se cargarán dinámicamente -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Productos -->
+    <section class="products" id="juegos">
+      <div class="container">
+        <h2 class="section-title">Juegos Destacados</h2>
+        <div class="product-grid" id="productos-grid">
+          <!-- Los productos se cargarán dinámicamente -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER (NUEVO) -->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <h3>GameUsmp</h3>
+            <p>
+              La mejor tienda de videojuegos. Productos de calidad y atención
+              personalizada para todos los gamers.
+            </p>
+          </div>
+
+          <!-- Enlaces rápidos -->
+          <div class="footer-links">
+            <h4>Enlaces rápidos</h4>
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="#novedades">Novedades</a></li>
+              <li><a href="#juegos">Juegos</a></li>
+              <li><a href="juego.html">Minijuego</a></li>
+            </ul>
+          </div>
+
+          <!-- Contacto -->
+          <div class="footer-contact">
+            <h4>Contacto</h4>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Av. Los Videojuegos 456,
+              Lima
+            </p>
+            <p><i class="fas fa-phone"></i> +51 1 234 5678</p>
+            <p><i class="fas fa-envelope"></i> info@gameusmp.com</p>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-newsletter">
+            <h4>Síguenos</h4>
+            <p>Suscríbete a nuestro newsletter</p>
+            <form class="newsletter-form" id="newsletterForm">
+              <input
+                type="email"
+                class="newsletter-input"
+                placeholder="Tu email"
+                required
+              />
+              <button type="submit" class="newsletter-btn">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="footer-bottom">
+          <p class="copyright">
+            © 2025 GameUsmp. Todos los derechos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/carrito.js"></script>
+    <script>
+      // Formulario de newsletter para index.html
+      document
+        .getElementById("newsletterForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const email = this.querySelector(".newsletter-input").value;
+          if (email) {
+            alert("¡Gracias por suscribirte a nuestro newsletter!");
+            this.reset();
+          }
+        });
+    </script>
+  </body>
+</html>

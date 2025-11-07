@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minijuego - GameUsmp</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/juego.css" />
+    <link rel="stylesheet" href="styles/contacto.css" />
+    <!-- AGREGADO -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <a href="index.html" class="logo"
+            ><i class="fas fa-gamepad"></i>GameUsmp</a
+          >
+          <nav>
+            <ul>
+              <li>
+                <a href="index.html"><i class="fas fa-home"></i>Inicio</a>
+              </li>
+              <li>
+                <a href="index.html#novedades"
+                  ><i class="fas fa-star"></i>Novedades</a
+                >
+              </li>
+              <li>
+                <a href="index.html#juegos"
+                  ><i class="fas fa-dice"></i>Juegos</a
+                >
+              </li>
+              <li>
+                <a href="juego.html" class="active"
+                  ><i class="fas fa-puzzle-piece"></i>Minijuego</a
+                >
+              </li>
+              <li>
+                <a href="contacto.html"
+                  ><i class="fas fa-envelope"></i>Contacto</a
+                >
+              </li>
+              <li>
+                <a href="ubicacion.html"
+                  ><i class="fas fa-map-marker-alt"></i>Ubicación</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div class="header-actions">
+            <button class="theme-toggle" id="themeToggle">
+              <i class="fas fa-moon"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Minijuego -->
+    <section class="minigame">
+      <div class="container">
+        <div class="game-container">
+          <h2 class="section-title game-title">Minijuego: Atrapa los Coins</h2>
+
+          <div class="game-stats">
+            <div class="game-stat">
+              <div class="game-stat-value" id="score">0</div>
+              <div class="game-stat-label">Puntuación</div>
+            </div>
+            <div class="game-stat">
+              <div class="game-stat-value" id="lives">3</div>
+              <div class="game-stat-label">Vidas</div>
+            </div>
+            <div class="game-stat">
+              <div class="game-stat-value" id="level">1</div>
+              <div class="game-stat-label">Nivel</div>
+            </div>
+          </div>
+
+          <canvas
+            id="gameCanvas"
+            width="600"
+            height="400"
+            class="game-canvas"
+          ></canvas>
+
+          <div class="game-controls">
+            <button id="startBtn" class="game-btn">Iniciar Juego</button>
+            <button id="pauseBtn" class="game-btn">Pausar</button>
+            <button id="resetBtn" class="game-btn">Reiniciar</button>
+          </div>
+
+          <div class="game-instructions">
+            <p>
+              <i class="fas fa-arrow-left"></i> Usa las flechas izquierda y
+              derecha para moverte
+            </p>
+            <p>
+              <i class="fas fa-arrow-right"></i> Atrapa los coins verdes para
+              ganar puntos
+            </p>
+            <p>
+              <i class="fas fa-exclamation-triangle"></i> Evita los coins rojos
+              para no perder vidas
+            </p>
+          </div>
+
+          <div id="gameMessage" class="game-message"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER (NUEVO) -->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <h3>GameUsmp</h3>
+            <p>
+              La mejor tienda de videojuegos. Productos de calidad y atención
+              personalizada para todos los gamers.
+            </p>
+          </div>
+
+          <!-- Enlaces rápidos -->
+          <div class="footer-links">
+            <h4>Enlaces rápidos</h4>
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="index.html#novedades">Novedades</a></li>
+              <li><a href="index.html#juegos">Juegos</a></li>
+              <li><a href="juego.html">Minijuego</a></li>
+            </ul>
+          </div>
+
+          <!-- Contacto -->
+          <div class="footer-contact">
+            <h4>Contacto</h4>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Av. Los Videojuegos 456,
+              Lima
+            </p>
+            <p><i class="fas fa-phone"></i> +51 1 234 5678</p>
+            <p><i class="fas fa-envelope"></i> info@gameusmp.com</p>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-newsletter">
+            <h4>Síguenos</h4>
+            <p>Suscríbete a nuestro newsletter</p>
+            <form class="newsletter-form" id="newsletterForm">
+              <input
+                type="email"
+                class="newsletter-input"
+                placeholder="Tu email"
+                required
+              />
+              <button type="submit" class="newsletter-btn">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="footer-bottom">
+          <p class="copyright">
+            © 2025 GameUsmp. Todos los derechos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/juego.js"></script>
+    <script>
+      // Formulario de newsletter para juego.html
+      document
+        .getElementById("newsletterForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const email = this.querySelector(".newsletter-input").value;
+          if (email) {
+            alert("¡Gracias por suscribirte a nuestro newsletter!");
+            this.reset();
+          }
+        });
+    </script>
+  </body>
+</html>

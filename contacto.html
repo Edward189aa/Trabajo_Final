@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto - GameUsmp</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/contacto.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <a href="index.html" class="logo"
+            ><i class="fas fa-gamepad"></i>GameUsmp</a
+          >
+          <nav>
+            <ul>
+              <li>
+                <a href="index.html"><i class="fas fa-home"></i>Inicio</a>
+              </li>
+              <li>
+                <a href="index.html#novedades"
+                  ><i class="fas fa-star"></i>Novedades</a
+                >
+              </li>
+              <li>
+                <a href="index.html#juegos"
+                  ><i class="fas fa-dice"></i>Juegos</a
+                >
+              </li>
+              <li>
+                <a href="juego.html"
+                  ><i class="fas fa-puzzle-piece"></i>Minijuego</a
+                >
+              </li>
+              <li>
+                <a href="contacto.html" class="active"
+                  ><i class="fas fa-envelope"></i>Contacto</a
+                >
+              </li>
+              <li>
+                <a href="ubicacion.html"
+                  ><i class="fas fa-map-marker-alt"></i>Ubicación</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div class="header-actions">
+            <button class="theme-toggle" id="themeToggle">
+              <i class="fas fa-moon"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sección de Contacto -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-container">
+          <h1 class="contact-title">Contacto</h1>
+          <p class="contact-subtitle">Envíanos un mensaje</p>
+
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" />
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Enviar Mensaje</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer (IGUAL EN TODAS LAS PÁGINAS) -->
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Brand -->
+          <div class="footer-brand">
+            <h3>GameUsmp</h3>
+            <p>
+              La mejor tienda de videojuegos. Productos de calidad y atención
+              personalizada para todos los gamers.
+            </p>
+          </div>
+
+          <!-- Enlaces rápidos -->
+          <div class="footer-links">
+            <h4>Enlaces rápidos</h4>
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="index.html#novedades">Novedades</a></li>
+              <li><a href="index.html#juegos">Juegos</a></li>
+              <li><a href="juego.html">Minijuego</a></li>
+            </ul>
+          </div>
+
+          <!-- Contacto -->
+          <div class="footer-contact">
+            <h4>Contacto</h4>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Av. Los Videojuegos 456,
+              Lima
+            </p>
+            <p><i class="fas fa-phone"></i> +51 1 234 5678</p>
+            <p><i class="fas fa-envelope"></i> info@gameusmp.com</p>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="footer-newsletter">
+            <h4>Síguenos</h4>
+            <p>Suscríbete a nuestro newsletter</p>
+            <form class="newsletter-form" id="newsletterForm">
+              <input
+                type="email"
+                class="newsletter-input"
+                placeholder="Tu email"
+                required
+              />
+              <button type="submit" class="newsletter-btn">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="footer-bottom">
+          <p class="copyright">
+            © 2025 GameUsmp. Todos los derechos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script>
+      // Formulario de contacto
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Validación básica
+          const nombre = document.getElementById("nombre").value;
+          const email = document.getElementById("email").value;
+          const mensaje = document.getElementById("mensaje").value;
+
+          if (!nombre || !email || !mensaje) {
+            alert("Por favor, completa todos los campos obligatorios.");
+            return;
+          }
+
+          // Simular envío
+          alert("¡Mensaje enviado correctamente! Te contactaremos pronto.");
+          this.reset();
+        });
+
+      // Formulario de newsletter
+      document
+        .getElementById("newsletterForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const email = this.querySelector(".newsletter-input").value;
+          if (email) {
+            alert("¡Gracias por suscribirte!");
+            this.reset();
+          }
+        });
+    </script>
+  </body>
+</html>
